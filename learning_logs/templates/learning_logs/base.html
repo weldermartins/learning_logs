@@ -1,0 +1,10 @@
+<p>
+	<a href="{% url 'learning_logs:index' %}">Registro de apreendizagem</a> - 
+	<a href="{% url 'learning_logs:topics'%}">Tópicos</a> -
+	{% if user.is_authenticated %}
+		ola, {{ user.name }}.
+		{% else %}
+			<a href="{% url 'users:login' %}">Logar </a>
+	{% endif %}		
+</p>
+{% block content %}{% endblock content %}

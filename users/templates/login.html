@@ -1,0 +1,16 @@
+{% extends "learnig_logs/base.html"%}
+
+{% block content %}
+
+	{% if form.erros %}
+	<p>Seu nome de usuário e senha não coincidem. Por favor, tente novamente.</p>
+	{% endif %}
+	<form method="post" action="{%  url 'users:login' %}">
+		{% endif %}
+		{{ form.as_p }}
+		<button type="hidden" name="next" value="{% url 'learning_logs:index' %}"></button>
+	
+	</form>
+
+
+{% endblock content %}
